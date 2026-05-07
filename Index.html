@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>중흥 조기축구회 야유회 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&family=Black+Han+Sans&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --green: #1a7a2e;
+      --green-light: #2db34a;
+      --yellow: #f5c800;
+      --dark: #0d1f0f;
+      --white: #f9f9f2;
+    }
+
+```
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background-color: var(--dark);
+  color: var(--white);
+  font-family: 'Noto Sans KR', sans-serif;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,0.015) 0px,
+      rgba(255,255,255,0.015) 60px,
+      transparent 60px,
+      transparent 120px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 24px 40px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.ball-bg {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.04);
+  animation: spin 20s linear infinite;
+}
+.ball-bg:nth-child(1) { width: 500px; height: 500px; top: -200px; right: -150px; animation-duration: 30s; }
+.ball-bg:nth-child(2) { width: 300px; height: 300px; bottom: 50px; left: -100px; animation-duration: 18s; animation-direction: reverse; }
+
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+.badge {
+  display: inline-block;
+  background: var(--yellow);
+  color: var(--dark);
+  font-weight: 900;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 24px;
+  animation: fadeDown 0.6s ease both;
+}
+
+.hero-title {
+  font-family: 'Black Han Sans', sans-serif;
+  font-size: clamp(2.8rem, 10vw, 6rem);
+  line-height: 1.05;
+  color: var(--white);
+  animation: fadeDown 0.7s 0.1s ease both;
+}
+
+.hero-title span { color: var(--yellow); display: block; }
+
+.hero-sub {
+  margin-top: 16px;
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.6);
+  animation: fadeDown 0.7s 0.2s ease both;
+}
+
+.hero-cta {
+  margin-top: 36px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: fadeDown 0.7s 0.3s ease both;
+}
+
+.btn {
+  padding: 14px 32px;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  text-decoration: none;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+.btn-primary { background: var(--yellow); color: var(--dark); }
+.btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.3); }
+
+.ball-row {
+  margin-top: 48px;
+  display: flex;
+  gap: 8px;
+  font-size: 1.6rem;
+  animation: fadeDown 0.7s 0.4s ease both;
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.section {
+  position: relative;
+  z-index: 1;
+  padding: 60px 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: 'Black Han Sans', sans-serif;
+  font-size: 1.8rem;
+  color: var(--yellow);
+  margin-bottom: 28px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 28px 24px;
+  transition: transform 0.2s, background 0.2s;
+}
+.card:hover { transform: translateY(-4px); background: rgba(255,255,255,0.09); }
+.card-icon { font-size: 2rem; margin-bottom: 12px; }
+.card-label { font-size: 0.78rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.45); margin-bottom: 6px; text-transform: uppercase; }
+.card-value { font-weight: 700; font-size: 1.15rem; color: var(--white); }
+.card-value small { font-size: 0.85rem; color: rgba(255,255,255,0.5); font-weight: 400; }
+
+.timeline { display: flex; flex-direction: column; }
+
+.timeline-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding-bottom: 28px;
+}
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-item:last-child .tl-line { display: none; }
+
+.tl-time { min-width: 70px; font-weight: 700; color: var(--yellow); font-size: 0.95rem; padding-top: 2px; }
+
+.tl-dot-wrap { display: flex; flex-direction: column; align-items: center; }
+.tl-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--green-light); border: 2px solid var(--yellow); flex-shrink: 0; margin-top: 4px; }
+.tl-line { width: 2px; flex: 1; background: rgba(255,255,255,0.1); margin-top: 4px; min-height: 30px; }
+
+.tl-title { font-weight: 700; font-size: 1rem; margin-bottom: 4px; }
+.tl-desc { font-size: 0.88rem; color: rgba(255,255,255,0.5); }
+
+.notice-list { display: flex; flex-direction: column; gap: 12px; }
+.notice-item {
+  background: rgba(245,200,0,0.07);
+  border-left: 3px solid var(--yellow);
+  border-radius: 0 12px 12px 0;
+  padding: 14px 18px;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.85);
+}
+
+.grass-divider {
+  height: 6px;
+  background: repeating-linear-gradient(90deg, var(--green) 0px, var(--green) 40px, var(--green-light) 40px, var(--green-light) 80px);
+  opacity: 0.4;
+}
+
+footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 48px 24px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+.footer-logo { font-family: 'Black Han Sans', sans-serif; font-size: 1.4rem; color: var(--yellow); margin-bottom: 8px; }
+footer p { font-size: 0.82rem; color: rgba(255,255,255,0.3); }
+```
+
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="ball-bg"></div>
+    <div class="ball-bg"></div>
+    <div class="badge">⚽ 2025 연간 행사</div>
+    <h1 class="hero-title">
+      중흥 조기축구회
+      <span>야유회</span>
+    </h1>
+    <p class="hero-sub">함께 뛰고, 함께 즐기고, 함께 추억을 만들어요!</p>
+    <div class="hero-cta">
+      <a href="#info" class="btn btn-primary">행사 정보 보기</a>
+      <a href="#schedule" class="btn btn-outline">일정 확인</a>
+    </div>
+    <div class="ball-row">⚽ 🏃 🎉 🍖 🏆 🎊</div>
+  </section>
+
+  <div class="grass-divider"></div>
+
+  <section class="section" id="info">
+    <h2 class="section-title">📋 행사 안내</h2>
+    <div class="cards">
+      <div class="card"><div class="card-icon">📅</div><div class="card-label">날짜</div><div class="card-value">2025년 6월 14일 <small>(토)</small></div></div>
+      <div class="card"><div class="card-icon">📍</div><div class="card-label">장소</div><div class="card-value">미정 <small>(추후 공지)</small></div></div>
+      <div class="card"><div class="card-icon">🕗</div><div class="card-label">집합 시간</div><div class="card-value">오전 7:00</div></div>
+      <div class="card"><div class="card-icon">👥</div><div class="card-label">대상</div><div class="card-value">전 회원 <small>+ 가족</small></div></div>
+      <div class="card"><div class="card-icon">💰</div><div class="card-label">참가비</div><div class="card-value">회원 무료 <small>(가족 1만원)</small></div></div>
+      <div class="card"><div class="card-icon">🚌</div><div class="card-label">이동</div><div class="card-value">전세버스 <small>이용</small></div></div>
+    </div>
+  </section>
+
+  <div class="grass-divider"></div>
+
+  <section class="section" id="schedule">
+    <h2 class="section-title">🗓️ 당일 일정</h2>
+    <div class="timeline">
+      <div class="timeline-item"><div class="tl-time">07:00</div><div class="tl-dot-wrap"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-content"><div class="tl-title">집합 및 출발</div><div class="tl-desc">전세버스 탑승 · 출석 확인</div></div></div>
+      <div class="timeline-item"><div class="tl-time">09:30</div><div class="tl-dot-wrap"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-content"><div class="tl-title">현지 도착 · 준비운동</div><div class="tl-desc">짐 정리 및 스트레칭</div></div></div>
+      <div class="timeline-item"><div class="tl-time">10:00</div><div class="tl-dot-wrap"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-content"><div class="tl-title">⚽ 친선 축구 경기</div><div class="tl-desc">팀 나눠서 미니 리그 진행</div></div></div>
+      <div class="timeline-item"><div class="tl-time">12:00</div><div class="tl-dot-wrap"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-content"><div class="tl-title">🍖 점심 식사 & 바베큐</div><div class="tl-desc">삼겹살 파티 · 막걸리 한 잔</div></div></div>
+      <div class="timeline-item"><div class="tl-time">14:00</div><div class="tl-dot-wrap"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-content"><div class="tl-title">🎯 여가 활동 & 게임</div><div class="tl-desc">팀 게임 · 경품 추첨</div></div></div>
+      <div class="timeline-item"><div class="tl-time">16:00</div><div class="tl-dot-wrap"><div class="tl-dot"></div><div class="tl-line"></div></div><div class="tl-content"><div class="tl-title">🏆 시상식 & 단체 사진</div><div class="tl-desc">MVP · 베스트 골 · 우수 회원 시상</div></div></div>
+      <div class="timeline-item"><div class="tl-time">17:00</div><div class="tl-dot-wrap"><div class="tl-dot"></div></div><div class="tl-content"><div class="tl-title">귀가 출발</div><div class="tl-desc">버스 탑승 · 안전 귀가</div></div></div>
+    </div>
+  </section>
+
+  <div class="grass-divider"></div>
+
+  <section class="section" id="notice">
+    <h2 class="section-title">📣 참가 안내</h2>
+    <div class="notice-list">
+      <div class="notice-item">✅ 참가 신청은 <strong>6월 7일(토)</strong>까지 총무에게 연락해 주세요.</div>
+      <div class="notice-item">👟 운동복 및 축구화(또는 운동화) 착용 필수입니다.</div>
+      <div class="notice-item">🌧️ 우천 시에도 행사는 진행되니 우비를 준비해 주세요.</div>
+      <div class="notice-item">🍺 음주 후 개인 차량 운전은 절대 금지입니다.</div>
+      <div class="notice-item">📸 추억을 위해 카메라/폰 충전 꼭 해오세요!</div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">⚽ 중흥 조기축구회</div>
+    <p>문의: 총무 홍길동 · 010-0000-0000</p>
+    <p style="margin-top:6px;">모두 함께 즐거운 하루 만들어요 🎉</p>
+  </footer>
+
+</body>
+</html>
